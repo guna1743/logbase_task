@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Logbase</title>
+	<link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <h2 style="text-align:center ;">Job Form</h2> 
+	<center>
+        <form action="" name="myform" onsubmit="return valid()"></form>
+		<table>
+			<thead>
+				<tr>
+					<th>Job Name:</th>
+					<td><input type="text" name="jname" id="jname" placeholder="Enter Job Name"></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>Job Id:</th>
+					<td><input type="text" name="jid" id="jid" placeholder="Enter Job ID" required></td>
+				</tr>
+				<tr>
+					<th>Priority:</th>
+					<td><input type="text" name="prior" id="prior" placeholder="Enter Priority"></td>
+				</tr>
+
+                <tr id="btna">
+					<td ><input style="text-align: center;background-color: skyblue;cursor: pointer;height: 50px;width: 100px;" type="button" name="button" id="btn" value="Submit Job" onclick="AddRow()"></td>
+				</tr>
+				
+			</tbody>
+		</table>
+
+		<table border="1" id="show">
+			<thead class="hello">
+				<tr>
+					<th>Job Name</th>
+					<th>Job Id</th>
+					<th>Priority</th>
+                    <th>Status</th>
+					
+				</tr>
+			</thead>
+		</table>
+
+        <br><br>
+        <button type="submit" style="text-align:center ;cursor: pointer;height: 50px;width: 100px;">Start Processing</button>
+	</center>
+	
+	<script>
+		var a=0;
+		var list1 = [];
+		var list2 = [];
+		var list3 = [];
+		
+
+		var n = 1;
+		var x = 0;
+
+		function AddRow(){
+
+			var AddRown = document.getElementById('show');
+			var NewRow = AddRown.insertRow(n);
+
+			list1[x] = document.getElementById("jname").value;
+			list2[x] = document.getElementById("jid").value;
+			list3[x] = document.getElementById("prior").value;
+			
+
+			var cel1 = NewRow.insertCell(0);
+			var cel2 = NewRow.insertCell(1);
+			var cel3 = NewRow.insertCell(2);
+            
+			
+
+			cel1.innerHTML = list1[x];
+			cel2.innerHTML = list2[x];
+			cel3.innerHTML = list3[x];
+			
+
+			n++;
+			x++;
+            
+            
+            console.log(cel1);
+            console.log(cel2);
+            console.log(cel3);
+            document.getElementById("jname").value="";
+            document.getElementById("jid").value="";
+            document.getElementById("prior").value="";
+
+            var myarr=[cel1,cel2,cel3];
+
+            console.log(myarr[a++]);
+            console.log(myarr[a++]);
+            console.log(myarr[a++]);
+            
+
+            
+		}
+
+	</script>
+</body>
+</html>

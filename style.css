@@ -1,0 +1,17 @@
+table,td,th{
+  border: 1 px solid black;
+  border-collapse: collapse;
+  padding: 20px;
+  padding-right: 30px;
+  word-spacing: 10px;
+}
+th{
+    background-color: greenyellow;
+}
+.hello{
+    background-color: wheat;
+}
+
+button{
+    background-color: aqua;
+}
